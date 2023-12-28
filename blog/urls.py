@@ -1,10 +1,7 @@
 # blog/urls.py
 from django.urls import path
-from .views import PostList, PostDetail
-from .views import fetch_username
+from .views import fetch_all_users
 
 urlpatterns = [
-    path('console/', fetch_username, name='fetch_username'),
-    path('posts/', PostList.as_view(), name='post-list'),
-    path('posts/<int:pk>/', PostDetail.as_view(), name='post-detail'),
+    path('', fetch_all_users, name='fetch_all_users'),
 ]
